@@ -18,23 +18,23 @@ var elem = document.documentElement;
 var marker = document.querySelector("#marker");
 var fullbutton = document.querySelector("#fullscreen");
 var button = document.querySelector("#mutebutton");
-var Video_2 = document.querySelector("#Video_Asset_2");
+var Video_1 = document.querySelector("#Video_Asset_1");
 marker.addEventListener("markerFound", function (evt) {
 markerFound = 1;
-Video_2.play();
+Video_1.play();
 });
 marker.addEventListener("markerLost", function (evt) {
 markerFound = 0;
-Video_2.pause();
+Video_1.pause();
 });
 button.addEventListener("click", function(evt){
 console.log("button clicked")
-if(Video_2.muted==true){
+if(Video_1.muted==true){
 button.innerHTML="Mute";
-Video_2.muted=false;
+Video_1.muted=false;
 }else{
 button.innerHTML="Unmute";
-Video_2.muted=true;
+Video_1.muted=true;
 }
 });
 
@@ -118,7 +118,7 @@ if (markerFound == 1) {
 
 <!-- BEGIN: Unity Compiled Assets -->
 <a-assets>
-<video id="Video_Asset_2" autoplay="false" loop crossorigin="anonymous" src="videos/video.mp4" webkit-playsinline playsinline controls muted></video>
+<video id="Video_Asset_1" autoplay="false" loop crossorigin="anonymous" src="videos/video.mp4" webkit-playsinline playsinline controls muted></video>
 </a-assets>
 <!-- END: Unity Compiled Assets -->
 <!-- BEGIN: Add Image Target (marker) -->
@@ -126,12 +126,16 @@ if (markerFound == 1) {
 <!-- END: Add Image Target (marker) -->
 
 <!-- BEGIN: Unity Compiled Objects -->
-<a-box width="0.4591699" height="0.09142704" depth="0.429043" class="intersectable" position="0 0.0707 0.002" rotation="0 0 0" color="#FF0000" 
-></a-box>
 <a-plane width="1.8624" height="1" src="textures/shipman-northcutt-sgZX15Da8YE-unsplash.png" class="intersectable" position="-0.008 0.069 -1.207" rotation="273.2828 0 0" color="#FFFFFF" 
 ></a-plane>
-<a-video width="1.852044" height="1" src="#Video_Asset_2" class="intersectable" position="-0.002 -0.032 2.975" rotation="270.61 0 0" color="#FFFFFF" 
+<a-video width="1.852044" height="1" src="#Video_Asset_1" class="intersectable" position="-0.002 -0.032 2.975" rotation="270.61 0 0" color="#FFFFFF" 
 ></a-video>
+<a-plane width="0.7" height="0.7" src="textures/internet-web-browser.png" class="intersectable" position="-1.36 -0.256 0.192" rotation="270 0 0" color="#FFFFFF" 
+></a-plane>
+<a-plane width="0.8" height="0.5" src="textures/envelope.png" class="intersectable" position="-1.36 -0.256 0.919" rotation="270 0 0" color="#FFFFFF" 
+></a-plane>
+<a-plane width="0.7" height="0.7" src="textures/phone-square.png" class="intersectable" position="-1.36 -0.256 1.629" rotation="270 0 0" color="#FFFFFF" 
+></a-plane>
 <!-- END: Unity Compiled Objects -->
 
 <!-- BEGIN: Bottom HTML -->
